@@ -2,6 +2,11 @@
 
 SupportSense AI is an intelligent IT service-desk platform that helps support teams create, manage, analyze, and resolve IT support tickets.
 
+## Live Demo
+
+Try the deployed application here:  
+[Open SupportSense AI](https://supportsense-ai-3k8qdhefs8gmrsgbvz7kmh.streamlit.app/)
+
 ## Features
 
 - Create and manage IT support tickets
@@ -13,6 +18,13 @@ SupportSense AI is an intelligent IT service-desk platform that helps support te
 - Find similar previously resolved tickets and their resolution notes
 - Export filtered ticket reports as CSV files
 - Track ticket status: Open, In Progress, and Resolved
+
+ ## Demo Guide
+
+1. Click **Load Demo Data** in the sidebar when the cloud database is empty.
+2. Open **Dashboard** to view ticket trends and SLA-risk insights.
+3. Open **Ticket Center** to create, search, filter, update, and export tickets.
+4. Use **AI Ticket Analyzer** to predict ticket category, priority, SLA risk, suggested resolution steps, and similar resolved tickets.
 
 ## AI Workflow
 
