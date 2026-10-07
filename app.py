@@ -97,7 +97,40 @@ def add_ticket(issue_title, description, category, priority, employee_name):
     connection.close()
 
     return predicted_category, predicted_priority, sla_risk
+def load_demo_tickets():
+    demo_tickets = [
+        (
+            "VPN connection failed",
+            "I cannot connect to the company VPN from home and cannot work.",
+            "Network",
+            "High",
+            "Aarav Sharma",
+        ),
+        (
+            "Forgot company password",
+            "My account is locked and I need help resetting my password.",
+            "Access",
+            "Medium",
+            "Meera Patel",
+        ),
+        (
+            "Laptop keyboard not working",
+            "Several keys on my laptop keyboard have stopped working.",
+            "Hardware",
+            "Medium",
+            "Rohan Kumar",
+        ),
+        (
+            "Request for extra monitor",
+            "I need an additional monitor for my workstation.",
+            "Other",
+            "Low",
+            "Ananya Singh",
+        ),
+    ]
 
+    for ticket in demo_tickets:
+        add_ticket(*ticket)
 
 def get_tickets():
     connection = get_connection()
@@ -181,7 +214,10 @@ page = st.sidebar.radio(
 )
 
 tickets = get_tickets()
-
+if tickets.empty:
+    if st.sidebar.button("Load Demo Data"):
+        load_demo_tickets()
+        st.rerun()
 if page == "Dashboard":
     st.title("Operations Dashboard")
     st.caption("Monitor support workload, priorities, and SLA risks.")
